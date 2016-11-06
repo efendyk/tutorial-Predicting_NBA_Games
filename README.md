@@ -18,3 +18,5 @@ In this repo I included the R code, T-SQL code, and database used in my presenta
 4. Created a AwayRecords.sql, HomeRecords.sql, OverallRecords.sql, and ScoreData.sql views to create the features for the games that we are predicting
 
 5. Executed the PredictGameBatchMode stored procedure to predicted the last quarter of the season.
+
+The raw data was obtained from the www.basketballgeek.com/data/ website. I used the CombineGamePlayByPlayData.R script to combine all of the 1,176 individual files into one data frame and saved that data frame to a csv file.
