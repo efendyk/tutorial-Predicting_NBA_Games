@@ -1,4 +1,4 @@
-# Predicting NBA Games
+ # Predicting NBA Games using SQL Server R Services
 
 In this repo I included the R code, T-SQL code, and database used in my presentation on SQL Server R Services. The steps are as follows:
 
