@@ -13,7 +13,7 @@ In this repo I included the R code, T-SQL code, and the database used in my pres
 
    2. I created the NBAModels table and the AddModel stored procedure in the NBAPredictions database. The NBAModels table warehouses the actual model as well as additional columns for the model attributes. The AddModel stored procedure is used to get the serialized version of the model from R, convert the model to a binary format, then insert the model along with some of its attributes into the NBAModels table.
 
-   3. I executed the STEP_8.R script to add the 8 models and some of its attributes to the NBAModels table.
+   3. I executed the STEP_8.R script to add the 8 models and some of its attributes to the NBAModels table by calling the AddModel stored procedure that was created in step 2.
 
    4. I created the AwayRecords.sql, HomeRecords.sql, OverallRecords.sql, and ScoreData.sql views. These views were used to create the features for the games in the last quarter of the season.
 
