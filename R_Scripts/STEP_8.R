@@ -11,9 +11,9 @@
 # inserted into the NBAModels table. The field type of the column in the NBAModels table that stores the model is varbinary(max). Two columns were added to the 
 # table. The AIC field was added to hold the AIC statistic and a field was also added to hold the model's name. 
 #
-# The model is operationalized via the "PredictGameBatchMode" stored procedure. This stored procedure passes the model to a R script. The R script uses the rxPredict 
-# function to score the last quarter of the season. The output of rxPredict function is a vector but rxPredict gives you the option to return additional columns. 
-# The game_id is returned so that we can join the scored data with the data in the database.
+# The model is operationalized via the "PredictGameBatchMode" stored procedure. This stored procedure passes the model that you want to use to score the last quarter 
+# of the season from the NBAModels table to a R script. The R script uses the rxPredict function to score the data. The output of rxPredict function is normally a 
+# vector but rxPredict gives you the option to return additional columns. The game_id is returned so that we can join the scored data with the other data in the database.
 
 # Connects to the database
 server.name = "<put the name of the machine that warehouses the database here>"
