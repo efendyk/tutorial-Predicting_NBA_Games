@@ -16,7 +16,8 @@ SELECT
 		CASE 
 			WHEN hr.tertiles = 1 THEN 'bad_at_home' 
 			WHEN hr.tertiles = 2 THEN 'ok_at_home' 
-			WHEN hr.tertiles = 3 THEN 'good_at_home' END
+			WHEN hr.tertiles = 3 THEN 'good_at_home' 
+		END
 	,away_team_record_level = 
 		CASE 
 			WHEN ar.tertiles = 1 THEN 'bad_away' 
