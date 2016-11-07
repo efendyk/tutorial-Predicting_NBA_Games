@@ -1,21 +1,19 @@
-# This step incrementally serialize each model then add thme to the NBAModels table in SQL Server. It does so by dynamically creating the sql statement below 
-# that executes the AddModel stored procedure in the NBAPredictions database:
+# This step incrementally serialize each of the 8 models created in step 7 then add them to the NBAModels table in SQL Server. It does so by dynamically 
+# creating the sql statement below which executes the AddModel stored procedure in the NBAPredictions database:
 #
 #	EXEC AddModel 
 #		 @ModelName = '<model name>'
 #		,@AIC = '<AIC Stat>'
 #		,@Model_Serialized = '<string representation of the model>'
 #
-# The only parameter that is absolutely required is the @Model_Serialized parameter which is the parameter that contains the serialized
-# version of the model. That parameter is passed to the AddModel stored procedure in SQL Server and is converted back into a binary format then 
-# inserted into the NBAModels table. The field type of the column in the NBAModels table that stores the model is varbinary(max). Other columns 
-# were created to store important attributes about the model. A column was created for the AIC statistic and for the model name. 
+# The only parameter that is absolutely required to operationalize the model is the @Model_Serialized parameter which is the parameter that contains the 
+# serialized version of the model. That parameter is passed to the AddModel stored procedure in SQL Server and is converted back into a binary format then 
+# inserted into the NBAModels table. The field type of the column in the NBAModels table that stores the model is varbinary(max). Two columns were added to the 
+# table. The AIC field was added to hold the AIC statistic and a field was also added to hold the model's name. 
 #
-# The model is operationalized via another stored procedure that passes the model to a R script. The model can be based on traditional
-# R or SQL Server R Services. In this example SQL Server R Services was used. The rxGLM function was used to build the model and the rxPredict function 
-# was used to score the last quarter of the season. The output of rxPredict is a vector but rxPredict gives you the option to return additional columns. 
-#
-# In this case the "PredictGameBatchMode" stored procedure was used to operationalize the model. It can be found in the NBAPredictions database.
+# The model is operationalized via the "PredictGameBatchMode" stored procedure. This stored procedure passes the model to a R script. The R script uses the rxPredict 
+# function to score the last quarter of the season. The output of rxPredict function is a vector but rxPredict gives you the option to return additional columns. 
+# The game_id is returned so that we can join the scored data with the data in the database.
 
 # Connects to the database
 server.name = "<put the name of the machine that warehouses the database here>"
