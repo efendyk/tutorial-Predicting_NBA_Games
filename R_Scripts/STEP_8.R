@@ -1,23 +1,21 @@
-# In this step we serialize the model and add it to a table in SQL Server. It does so by dynamically creating the sql statement below for 
-# for models that were created:
+# This step incrementally serialize each model then add thme to the NBAModels table in SQL Server. It does so by dynamically creating the sql statement below 
+# that executes the AddModel stored procedure in the NBAPredictions database:
 #
 #	EXEC AddModel 
 #		 @ModelName = '<model name>'
 #		,@AIC = '<AIC Stat>'
 #		,@Model_Serialized = '<string representation of the model>'
 #
-# The only parameter that is absolutely required is the @Model_Serialized parameter which is the parameter that actually contains the serialized
-# version of the model. That parameter is passed to the stored procedure in SQL Server that converts it back into binary format and inserts
-# it into a table designated to hold the model. The stored procedure that does not in our case is called "AddModel". The field type of the 
-# column that the stored procedure inserts the model in is varbinary(max). You can create other columns in the table that you created to store
-# store the model that represent attributes about that model. In our case we added the AIC statistic and the model name. 
+# The only parameter that is absolutely required is the @Model_Serialized parameter which is the parameter that contains the serialized
+# version of the model. That parameter is passed to the AddModel stored procedure in SQL Server and is converted back into a binary format then 
+# inserted into the NBAModels table. The field type of the column in the NBAModels table that stores the model is varbinary(max). Other columns 
+# were created to store important attributes about the model. A column was created for the AIC statistic and for the model name. 
 #
-# The model is operationalized via another stored procedure that passes the model to a R script. The model can be based on base R or traditional
-# R packages. It can also leverage the scaleR functions that are available in SQL Server R Services. In this example we are using the rxGLM
-# function to build our model. Given that we need to use the rxPredict function to score the data. The output of your prediction is a vector but
-# in the rxPredict formula you have the option to return additional columns. The stored procedure we used to operationalize our model is the
-# "PredictGameBatchMode" stored procedure. You can go to the NBAPredictions database to reference that stored procedure. I commented the stored
-# procedure so you can read the comments to learn more.
+# The model is operationalized via another stored procedure that passes the model to a R script. The model can be based on traditional
+# R or SQL Server R Services. In this example SQL Server R Services was used. The rxGLM function was used to build the model and the rxPredict function 
+# was used to score the last quarter of the season. The output of rxPredict is a vector but rxPredict gives you the option to return additional columns. 
+#
+# In this case the "PredictGameBatchMode" stored procedure was used to operationalize the model. It can be found in the NBAPredictions database.
 
 # Connects to the database
 server.name = "<put the name of the machine that warehouses the database here>"
