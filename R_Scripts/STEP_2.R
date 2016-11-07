@@ -1,6 +1,6 @@
-# The checkpoint library is used to make sure that we are using the most recent version of the packages for your project.
-# It scans all of the scripts in your working directory and makes sure that you have the most recent version of the packages
-# in your scripts and if you do not it goes to MRAN to download it.
+# The checkpoint library is used to make sure that we are using the most recent version of the packages as of the date that we pass
+# to the "checkpoint" function. It scans all of the scripts in the working directory to perform the test and if the test fails 
+# "Checkpoint" will download the package that meets that criteria from MRAN.
 
 library(checkpoint)
 checkpoint("2015-08-14")

@@ -20,7 +20,7 @@
 # procedure so you can read the comments to learn more.
 
 # Connects to the database
-server.name = "LAPTOP-3VQG3HOU"
+server.name = "<put the name of the machine that warehouses the database here>"
 db.name = "NBAPredictions"
 connection.string = paste("driver={SQL Server}",";","server=",server.name,";","database=", db.name, ";", "trusted_connection=true",sep="")
 conn <- odbcDriverConnect(connection.string)
