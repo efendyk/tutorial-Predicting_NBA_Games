@@ -1,5 +1,5 @@
-# This is the feature engineering step. First The following features are created in this step:  
-# day_type, home.team.record.level, away.team.record.level, home.team.overall.record.level, and 
+# This is the feature engineering step. The following features are created in this step:  day_type, 
+# home.team.record.level, away.team.record.level, home.team.overall.record.level, and 
 # away.team.overall.record.level).
 
 #*******************************************************************************************************************************************
