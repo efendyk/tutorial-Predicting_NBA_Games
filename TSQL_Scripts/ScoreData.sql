@@ -12,7 +12,7 @@ SELECT
 			WHEN DATEPART(WEEKDAY, game_date) IN (1, 7) 
 			THEN 'week_day' ELSE 'week_end' 
 		END 
-     ,home_team_record_level = 
+        ,home_team_record_level = 
 		CASE 
 			WHEN hr.tertiles = 1 THEN 'bad_at_home' 
 			WHEN hr.tertiles = 2 THEN 'ok_at_home' 
