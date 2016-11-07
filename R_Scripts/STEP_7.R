@@ -1,4 +1,4 @@
-# The AIC statistic suggests that the best model is model.8. We look at the ROC curve to test the accuracy of the model
+# The AIC statistic suggests that the best model is "model.5". We look at the ROC curve to see how good the model predicts outcoumes.
 
 # Do the predict part here
 columns <- c("day_type", "home_team_record_level", "away_team_record_level", "home_team_overall_record_level", "away_team_overall_record_level")
