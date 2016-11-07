@@ -17,8 +17,8 @@ In this repo I included the R code, T-SQL code, and the database used in my pres
 
    4. I created the AwayRecords.sql, HomeRecords.sql, OverallRecords.sql, and ScoreData.sql views. These views were used to create the features for the games in the last quarter of the season.
 
-   5. Executed the PredictGameBatchMode stored procedure to predicted the last quarter of the season.
+   5. I executed the PredictGameBatchMode stored procedure to predicted the last quarter of the season.
    
    6. I visualized the results in Power BI via the NBA_Report.pbix file.
 
-The raw data was obtained from the www.basketballgeek.com/data/ website. I used the CombineGamePlayByPlayData.R script to combine all of the 1,176 individual game data files into one data frame and saved that data frame to a csv file.
+The raw data was obtained from the www.basketballgeek.com/data/ website. I used the CombineGamePlayByPlayData.R script to combine all of the 1,176 individual game data files into one data frame. The resulting data frame was saved to a csv file and used as the source data for the PlayLevelData table data in the NBAPredictions database.
