@@ -1,6 +1,6 @@
 # Predicting NBA Games using SQL Server R Services
 
-In this repo I included the R code, T-SQL code, and the database used in my presentation on SQL Server R Services. The steps that I used in the presentation are as follows:
+In this repo I included the R code, T-SQL code, the SQL Server database, and Power BI desktop file used in my presentation on SQL Server R Services. The steps that I used in the presentation are as follows:
 
    1. I developed the models to predict the final quarter of the 2008 - 2009 NBA season using data from the first 3/4 of the season. The model was developed in RTVS. Listed are the R scripts used to develop the model broken out into logical units of work: 
 
