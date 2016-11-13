@@ -16,7 +16,9 @@ In this repo I included the R code, T-SQL code, and the database used in my pres
     
     - STEP_6.R:  In this step we create a XDF file to store our data frame to disk. The XDF file will be used by the rxGLM function to build the models. We create 8 different models and rank them using the AIC statistics.
     
-    - STEP_7.R:  Creates a ROC curve and calculates the AIC statistics to test the worthiness of the model
+    - STEP_7.R:  Creates a ROC curve and calculates the AIC statistics to test the worthiness of the model
+    
+    - STEP_8.R:  Creates a ROC curve and calculates the AIC statistics to test the worthiness of the model
 
    2. I created the NBAModels table and the AddModel stored procedure in the NBAPredictions database. The NBAModels table warehouses the actual model as well as additional columns for the model attributes. The AddModel stored procedure is used to get the serialized version of the model from R, convert the model to a binary format, then insert the model along with some of its attributes into the NBAModels table.
 
