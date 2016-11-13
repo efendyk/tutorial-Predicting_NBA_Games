@@ -6,7 +6,7 @@ In this repo I included the R code, T-SQL code, SQL Server database, and Power B
 
     - STEP_1.R:  Sets working directory
     
-    - STEP_2.R:  The checkpoint library is used to make sure that we are using the most recent version of the packages as of the date that we pass to the "checkpoint" function. It scans all of the scripts in the working directory to perform the test and if the test fails "checkpoint" will download the package that meets that criteria from MRAN.
+    - STEP_2.R:  The checkpoint library is used to make sure that the most recent version of the packages are used as of the date that is passed to the "checkpoint" function. It scans all of the scripts in the working directory to perform the test and if the test fails "checkpoint" will download the package that meets that criteria from MRAN.
     
     - STEP_3.R:  Retrieve data from SQL Server  
     
@@ -14,7 +14,7 @@ In this repo I included the R code, T-SQL code, SQL Server database, and Power B
     
     - STEP_5.R:  This is the feature engineering step. The following features are created in this step:  day_type, home.team.record.level, away.team.record.level, home.team.overall.record.level, and away.team.overall.record.level.
     
-    - STEP_6.R:  In this step a XDF file is created to store the data frame used to develop the model to disk. The XDF file will be used by the rxGLM function to build some logistic regression models. We create 8 different models and rank them using the AIC statistics.
+    - STEP_6.R:  In this step a XDF file is created to store the "model.train.data" data frame to disk. The XDF file was used by the rxGLM function to build 8 different logistic regression models. The models were ranked by using the AIC statistics.
     
     - STEP_7.R:  A ROC curve is created in this step and the AIC statistics is also calculated. This information is used to test the worthiness of the model
     
