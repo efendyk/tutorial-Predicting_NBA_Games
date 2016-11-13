@@ -13,8 +13,9 @@ In this repo I included the R code, T-SQL code, and the database used in my pres
     - STEP_4.R:  Partitions the data into a data set that will be used to create the training data set and a data set that will be used to create the testing data set
     
     - STEP_5.R:  This is the feature engineering step. The following features are created in this step:  day_type, home.team.record.level, away.team.record.level, home.team.overall.record.level, and away.team.overall.record.level.
+    
+    - STEP_6.R:  In this step we create a XDF file to store our data frame to disk. The XDF file will be used by the rxGLM function to build the models. We create 8 different models and rank them using the AIC statistics.
     
-    - STEP_6.R
     - STEP_7.R
 
    2. I created the NBAModels table and the AddModel stored procedure in the NBAPredictions database. The NBAModels table warehouses the actual model as well as additional columns for the model attributes. The AddModel stored procedure is used to get the serialized version of the model from R, convert the model to a binary format, then insert the model along with some of its attributes into the NBAModels table.
