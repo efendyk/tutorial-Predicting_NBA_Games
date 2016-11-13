@@ -4,7 +4,7 @@ In this repo I included the R code, T-SQL code, SQL Server database, and Power B
 
    1. I developed the models to predict the final quarter of the 2008 - 2009 NBA season using data from the first 3/4 of the season. The model was developed in RTVS. Listed are the R scripts used to develop the model broken out into logical units of work: 
 
-    - STEP_1.R:  Sets working directory
+    - STEP_1.R:   Sets the working directory
     
     - STEP_2.R:  The checkpoint library is used to make sure that the most recent version of the packages are used as of the date that is passed to the "checkpoint" function. It scans all of the scripts in the working directory to perform the test and if the test fails "checkpoint" will download the package that meets that criteria from MRAN.
     
