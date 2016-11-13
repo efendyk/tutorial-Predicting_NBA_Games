@@ -8,7 +8,7 @@ In this repo I included the R code, T-SQL code, and the database used in my pres
     
     - STEP_2.R:  The checkpoint library is used to make sure that we are using the most recent version of the packages as of the date that we pass to the "checkpoint" function. It scans all of the scripts in the working directory to perform the test and if the test fails "Checkpoint" will download the package that meets that criteria from MRAN.
     
-    - STEP_3.R:  Retrieve data from SQL Server  
+    - STEP_3.R:  Retrieve data from SQL Server  
     
     - STEP_4.R
     - STEP_5.R
