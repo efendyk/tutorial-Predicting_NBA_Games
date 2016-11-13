@@ -6,9 +6,9 @@ In this repo I included the R code, T-SQL code, SQL Server database, and Power B
 
     - STEP_1.R:   Sets the working directory
     
-    - STEP_2.R:  The checkpoint library is used to make sure that the most recent version of the packages are used as of the date that is passed to the "checkpoint" function. It scans all of the scripts in the working directory to perform the test and if the test fails "checkpoint" will download the package that meets that criteria from MRAN.
+    - STEP_2.R:  The checkpoint library is used to make sure that the most recent version of the packages are used as of the date that was passed to the "checkpoint" function. It scans all of the scripts in the working directory to perform the test and if the test fails "checkpoint" will download the package that meets that criteria from MRAN.
     
-    - STEP_3.R:  Retrieve data from SQL Server  
+    - STEP_3.R:  Retrieves data from SQL Server  
     
     - STEP_4.R:  Partitions the data into a data set that will be used to create the training data set and a data set that will be used to create the testing data set
     
@@ -16,7 +16,7 @@ In this repo I included the R code, T-SQL code, SQL Server database, and Power B
     
     - STEP_6.R:  In this step a XDF file is created to store the "model.train.data" data frame to disk. The XDF file was used by the rxGLM function to build 8 different logistic regression models. The models were ranked by using the AIC statistics.
     
-    - STEP_7.R:  A ROC curve is created in this step and the AIC statistics is also calculated. This information is used to test the worthiness of the model
+    - STEP_7.R:  A ROC curve is created in this step and the AUC statistics is also calculated. This information is used to test the worthiness of the model that had the highest AIC score.
     
    2. I created the NBAModels table and the AddModel stored procedure in the NBAPredictions database. The NBAModels table warehouses the actual model as well as additional columns for the model attributes. The AddModel stored procedure is used to get the serialized version of the model from R, convert the model to a binary format, then insert the model along with some of its attributes into the NBAModels table.
 
