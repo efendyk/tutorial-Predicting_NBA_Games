@@ -18,7 +18,7 @@ In this repo I included the R code, T-SQL code, and the database used in my pres
     
     - STEP_7.R:  Creates a ROC curve and calculates the AIC statistics to test the worthiness of the model
     
-    - STEP_8.R:  This step incrementally serialize each of the 8 models created in step 7 then add them to the NBAModels table in SQL Server. It does so by dynamically creating the sql statement that executes the AddModel stored procedure in the NBAPredictions database.
+    - STEP_8.R:  This step incrementally serialize each of the 8 models created in step 7 then add them to the NBAModels table in SQL Server. It does so by dynamically creating the sql statement that executes the AddModel stored procedure in the NBAPredictions database.
 
    2. I created the NBAModels table and the AddModel stored procedure in the NBAPredictions database. The NBAModels table warehouses the actual model as well as additional columns for the model attributes. The AddModel stored procedure is used to get the serialized version of the model from R, convert the model to a binary format, then insert the model along with some of its attributes into the NBAModels table.
 
